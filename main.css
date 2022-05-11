@@ -1,0 +1,393 @@
+@font-face {
+    font-family: 'Helvetica Now';
+    src: url('HelveticaNowVar.woff2') format('woff2');
+    font-weight: 50 1000;
+    font-stretch: 50 100;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Helvetica Now', sans-serif;
+
+    animation: bg-black-to-white 1.3s ease-in-out;
+
+    overflow: hidden;
+
+    background-color: #fff;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 20vmin;
+    height: 100%;
+    transform-origin: 50% 65%;
+    transform: translateX(-35vmin) skewX(14deg);
+    background-color: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+
+    animation: width-in .7s ease-in-out;
+}
+
+@keyframes width-in {
+    0% {
+        transform: translateX(-35vmin) skewX(10deg) scaleX(0);
+    }
+}
+
+#text {
+    font-size: 10vmin;
+
+    animation: font-weight-animation 1.3s ease-in-out;
+
+    font-weight: 720;
+
+    transition: font-weight .5s ease-in-out;
+}
+
+#text:hover {
+    font-weight: 780;
+}
+
+#second-text {
+
+    font-size: 7vmin;
+
+    font-weight: 600;
+
+    font-variation-settings: 'wdth' 95;
+
+    transition: font-weight .5s ease-in-out;
+
+    word-spacing: .25em;
+}
+
+#second-text>span {
+    transition: font-weight .5s ease-in-out;
+}
+
+#second-text>span:hover {
+    font-weight: 750;
+}
+
+.from-left {
+    display: inline-block;
+    animation: from-left 2s ease-in-out;
+}
+
+.from-bottom {
+    display: inline-block;
+    animation: from-bottom 2s ease-in-out;
+}
+
+.from-right {
+    display: inline-block;
+    animation: from-right 2s ease-in-out;
+}
+
+#third-text {
+    font-size: 5vmin;
+
+    font-weight: 300;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    height: 6vmin;
+
+    animation: fade-in 3.5s ease-in-out;
+
+    transition: font-weight .5s ease-in-out;
+
+    isolation: isolate;
+}
+
+#third-text:hover {
+    font-weight: 600;
+    opacity: 80%;
+}
+
+.solid {
+    color: black;
+    display: block;
+    position: absolute;
+
+    transition: opacity .5s ease-in-out;
+}
+
+#third-text:hover .solid {
+    opacity: 0%;
+}
+
+#third-text .solid {
+    text-decoration: underline;
+}
+
+.chromabbr {
+    display: block;
+    position: absolute;
+
+    mix-blend-mode: screen;
+
+    transition: transform .5s ease-in-out;
+}
+
+.chromabbr.red {
+    color: #f00;
+}
+
+.chromabbr.green {
+    color: #0f0;
+}
+
+.chromabbr.blue {
+    color: #00f;
+}
+
+:root {
+    --chromdist: .05em
+}
+
+#third-text:hover .red {
+    transform: translateX(calc(var(--chromdist) * -1));
+}
+
+#third-text:hover .blue {
+    transform: translateX(var(--chromdist));
+}
+
+:root {
+    --crdist: .5vmin;
+}
+
+.chromatic-container {
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    width: 11vmin;
+    height: 11vmin;
+}
+
+.cr {
+    display: block;
+    position: absolute;
+    transition: transform .5s ease-in-out;
+    mix-blend-mode: screen;
+}
+
+.cr.solid {
+    opacity: 100%;
+    mix-blend-mode: unset;
+    transition: opacity .5s ease-in-out;
+}
+
+.cr.solid>svg {
+    fill: #000;
+}
+
+.chromatic-container:hover .cr>svg {
+    width: 11vmin;
+    height: 11vmin;
+}
+
+.cr>svg {
+    animation: grow-in 3.5s ease-in-out, rotate-in 3.5s ease-in-out;
+    width: 10vmin;
+    height: 10vmin;
+    transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+
+.cr.red>svg {
+    fill: #f00;
+}
+
+.cr.green>svg {
+    fill: #0f0;
+}
+
+.cr.blue>svg {
+    fill: #00f;
+}
+
+.chromatic-container:hover>.red {
+    transform: translateX(calc(var(--crdist) * -1));
+}
+
+.chromatic-container:hover>.blue {
+    transform: translateX(var(--crdist));
+}
+
+.chromatic-container:hover>.solid {
+    opacity: 0%;
+}
+
+#links {
+    padding-top: 2vmin;
+    display: flex;
+    flex-direction: row;
+    gap: 3vmin;
+
+    animation: grow-in 3.5s ease-in-out;
+}
+
+.hover-green {
+    animation: font-weight-animation 1.3s ease-in-out;
+    font-weight: 720;
+    display: inline-block;
+    transform: scale(1);
+    transition: color .4s ease-in-out, transform .4s ease-in-out, text-shadow .4s ease-in-out, font-weight .4s ease-in-out;
+}
+
+.hover-green:hover {
+    color: #a2fa73;
+    transform: scale(1.1);
+    font-weight: 750;
+    text-shadow: .05em .05em .3em rgba(0, 0, 0, 0.6);
+}
+
+@keyframes rotate-in {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    85% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes grow-in {
+    0% {
+        transform: scale(0);
+    }
+
+    85% {
+        transform:scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes from-right {
+    0% {
+        transform: translateX(100vmax);
+    }
+
+    80% {
+        transform: translateX(100vmax);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes from-bottom {
+    0% {
+        transform: translateY(100vmax);
+    }
+
+    60% {
+        transform: translateY(calc(100vmax));
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes from-left {
+    0% {
+        transform: translateX(-100vmax);
+    }
+
+    40% {
+        transform: translateX(calc(-100vmax));
+    }
+
+    60% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in {
+    60% {
+        transform: translateY(calc(100vh));
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes font-weight-animation {
+    0% {
+        color: #fff;
+        font-weight: 50;
+    }
+    30% {
+        color: #fff;
+        font-weight: 50;
+    }
+    100% {
+        color: #000;
+    }
+}
+
+@keyframes bg-black-to-white {
+    0% {
+        background-color: #000;
+    }
+
+    30% {
+        background-color: #000;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+
+}
