@@ -210,15 +210,14 @@ body::after {
 }
 
 .chromatic-container:hover .cr>svg {
-    width: 11vmin;
-    height: 11vmin;
+    transform: scale(1.1);
 }
 
 .cr>svg {
     animation: grow-in 3.5s ease-in-out, rotate-in 3.5s ease-in-out;
     width: 10vmin;
     height: 10vmin;
-    transition: width .5s ease-in-out, height .5s ease-in-out;
+    transition: transform .5s ease-in-out, height .5s ease-in-out;
 }
 
 .cr.red>svg {
