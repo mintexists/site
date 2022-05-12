@@ -391,3 +391,35 @@ body::after {
     }
 
 }
+
+@media (prefers-reduced-motion) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    body::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    #text:hover {
+        font-weight: 720;
+    }
+
+    #second-text>span:hover {
+        font-weight: 600;
+    }
+
+    #third-text:hover {
+        font-weight: 300;
+        opacity: 100%;
+    }
+
+    .hover-green:hover {
+        color: #a2fa73;
+        transform: scale(1);
+        font-weight: 720;
+        text-shadow: .05em .05em .3em rgba(0, 0, 0, 0.6);
+    }
+}
