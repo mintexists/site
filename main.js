@@ -8,7 +8,7 @@ discordButton.addEventListener("click", e => {
     } else {
         navigator.permissions.query({name: "clipboard-write"}).then(result => {
             if (result.state == "granted" || result.state == "prompt") {
-                navigator.clipboard.writeText("evalyn#8883").then(function() {
+                navigator.clipboard.writeText("mintexists#8883").then(function() {
                     console.log("Copied!");
                 }, function() {
                     console.log("Not copied!");
