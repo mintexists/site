@@ -30,25 +30,27 @@ body {
     background-color: #fff;
 }
 
-body::after {
+#bar {
     content: '';
     position: absolute;
     top: 0%;
-    left: 50%;
+    left: calc(50% - 35vmin);
     width: 20vmin;
     height: 100%;
-    transform-origin: 50% 65%;
-    transform: translateX(-35vmin) skewX(14deg);
+    transform-origin: 50% 50%;
+    /* transform: translateX(calc(-35vmin)) skewX(14deg); */
     background-color: #fff;
     mix-blend-mode: difference;
     pointer-events: none;
+
+    transform: translateY(var(--offset)) matrix(1, 0, 0.4, 2, 0, 0);
 
     animation: width-in .7s ease-in-out;
 }
 
 @keyframes width-in {
     0% {
-        transform: translateX(-35vmin) skewX(10deg) scaleX(0);
+        transform: translateY(var(--offset)) matrix(1, 0, 0.4, 2, 0, 0) scaleX(0);
     }
 }
 
@@ -397,9 +399,10 @@ body::after {
         transition: none !important;
     }
 
-    body::after {
+    #bar {
         animation: none !important;
         transition: none !important;
+        transform: matrix(1, 0, 0.4, 2, 0, 0) !important;
     }
 
     #text:hover {
